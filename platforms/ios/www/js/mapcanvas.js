@@ -1,3 +1,35 @@
+var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+       // app.receivedEvent('deviceready');
+       navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
+    },
+
+    onSuccess: function(position){
+      initMap();
+    },
+
+    onError: function(error){
+        alert("the code is " + error.code + ". \n" + "message: " + error.message);
+    },
+};
+
+app.initialize();
+
 function initMap() {
     var pointA = new google.maps.LatLng(51.7519, -1.2578),
         pointB = new google.maps.LatLng(50.8429, -0.1313),

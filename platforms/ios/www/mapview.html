@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * data: 'unsafe-inline'">
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/mapcanvas.css" />
+        <link rel="stylesheet" type="text/css" href="css/mapstyle.css" />
         <title>Working Google Maps</title>
         <script text="javascript/text">
         function goback() {
@@ -16,7 +16,7 @@
     </head>
     <body>
       <div style="padding:10px">
-        <input type="submit" class="button"  style="padding:10px" onclick="goback()" value="GoBack">
+        <input type="submit" style="height:30px;" onclick="goback()" value="GoBack">
       </div>
         <div id="map" styel="position:relative"></div>
         <script type="text/javascript" src="cordova.js"></script>
