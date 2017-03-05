@@ -31,6 +31,12 @@ var app = {
 app.initialize();
 
 function initMap() {
+  var icon = {
+      url: "img/car2.jpg", // url
+      scaledSize: new google.maps.Size(15, 30), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+  };
     var pointA = new google.maps.LatLng(51.7519, -1.2578),
         pointB = new google.maps.LatLng(50.8429, -0.1313),
         myOptions = {
@@ -43,6 +49,15 @@ function initMap() {
         directionsDisplay = new google.maps.DirectionsRenderer({
             map: map
         }),
+
+
+
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(51.5429, -0.5313),
+          icon: icon,
+          map: map
+        });
+
         markerA = new google.maps.Marker({
             position: pointA,
             title: "point A",
@@ -64,6 +79,7 @@ function initMap() {
 
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+
     directionsService.route({
         origin: pointA,
         destination: pointB,
