@@ -10,15 +10,16 @@
         <title>Working Google Maps</title>
         <script text="javascript/text">
         function goback() {
-          window.open("mapcanvas.html");
+          window.open("index.html");
         }
         </script>
     </head>
     <body>
       <div style="padding:10px">
-        <input type="submit" style="height:30px;" onclick="goback()" value="GoBack">
+        <input class="recenterbutton" type="submit" onclick="resetMap()" value="Re-center Map">
+        <input class="button" type="submit" onclick="goback()" value="logout">
       </div>
-        <div id="map" styel="position:relative"></div>
+        <div id="map"></div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/mapjs.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpNKv1npne5yPpcMdWtn359ogx-ocQB9Y"> </script>

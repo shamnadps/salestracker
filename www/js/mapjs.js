@@ -1,3 +1,5 @@
+var map;
+var bounds;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -20,18 +22,18 @@ var app = {
     },
 
     onSuccess: function(position){
-      
-        var longitude = position.coords.longitude;
-        var latitude = position.coords.latitude;
-        var latLong = new google.maps.LatLng(latitude, longitude);
 
+        var longitude = '39.172777999999994';
+        var latitude = '21.543333';
+        var latLong = new google.maps.LatLng(latitude, longitude);
+        bounds = new google.maps.LatLngBounds();
         var mapOptions = {
             center: latLong,
             zoom: 13,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
-        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
         var icon = {
             url: "img/car2.jpg", // url
             scaledSize: new google.maps.Size(15, 30), // scaled size
@@ -39,12 +41,43 @@ var app = {
             anchor: new google.maps.Point(0, 0) // anchor
         };
 
-        var marker = new google.maps.Marker({
-              position: latLong,
-              icon: icon,
-              map: map,
-              title: 'my location'
-          });
+
+  var locations = [
+      ['<a href="mapcanvas.html">Taif</a>', 21.478503, 40.566196, 4],
+      ['<a href="mapcanvas.html">Al Wazeeriah, Jeddah</a>', 21.444598, 39.248555, 5],
+      ['<a href="mapcanvas.html">Al Hijra, Makkah</a>', 21.384098, 39.834531, 3],
+      ['<a href="mapcanvas.html">Makkah Al Mukarramah Rd</a>', 23.769336, 44.777977, 2],
+      ['<a href="mapcanvas.html">King Fahad Rd, Al Bahah</a>', 20.037963, 41.491884, 1]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(21.478503, 40.566196),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      var position = new google.maps.LatLng(locations[i][1], locations[i][2]);
+      bounds.extend(position);
+      marker = new google.maps.Marker({
+        position: position,
+        icon: icon,
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+
+    map.fitBounds(bounds);
     },
 
     onError: function(error){
@@ -53,3 +86,8 @@ var app = {
 };
 
 app.initialize();
+
+function resetMap() {
+  app.initialize();
+
+}
