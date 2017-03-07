@@ -104,6 +104,7 @@
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
     <uses-permission android:autoLink="phone" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
