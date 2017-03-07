@@ -63,6 +63,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phonegap.sap"
+        },
+        "com.phonegap.core.phonedialer": {
+            "PACKAGE_NAME": "com.phonegap.sap"
         }
     },
     "dependent_plugins": {

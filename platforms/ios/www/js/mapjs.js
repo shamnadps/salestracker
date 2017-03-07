@@ -35,19 +35,19 @@ var app = {
 
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
         var icon = {
-            url: "img/car2.jpg", // url
-            scaledSize: new google.maps.Size(15, 30), // scaled size
+            url: "img/blackcar.png", // url
+            scaledSize: new google.maps.Size(25, 30), // scaled size
             origin: new google.maps.Point(0,0), // origin
             anchor: new google.maps.Point(0, 0) // anchor
         };
 
 
   var locations = [
-      ['<a href="mapcanvas.html">Taif</a>', 21.478503, 40.566196, 4],
-      ['<a href="mapcanvas.html">Al Wazeeriah, Jeddah</a>', 21.444598, 39.248555, 5],
-      ['<a href="mapcanvas.html">Al Hijra, Makkah</a>', 21.384098, 39.834531, 3],
-      ['<a href="mapcanvas.html">Makkah Al Mukarramah Rd</a>', 23.769336, 44.777977, 2],
-      ['<a href="mapcanvas.html">King Fahad Rd, Al Bahah</a>', 20.037963, 41.491884, 1]
+      ['Driver No: ST01<br>Location:Taif<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 21.478503, 40.566196, 4],
+      ['Driver No: ST02<br>Location:Al Wazeeriah, Jeddah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 21.444598, 39.248555, 5],
+      ['Driver No: ST03<br>Location:Al Hijra, Makkah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 21.384098, 39.834531, 3],
+      ['Driver No: ST04<br>Location:Makkah Al Mukarramah Rd<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 23.769336, 44.777977, 2],
+      ['Driver No: ST05<br>Location:King Fahad Rd, Al Bahah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 20.037963, 41.491884, 1]
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {

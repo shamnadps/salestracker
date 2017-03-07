@@ -53,6 +53,7 @@
 		12F9A5E17A924A029ACF7D2F /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AD73445BD2094304BCE7411B /* CDVViewController+SplashScreen.m */; };
 		EC83A9BA34CE4716984A268B /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B31625321E41C49134B4F1 /* CDVStatusBar.m */; };
 		7A1689C2255D42BF924BFDC9 /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 003E8233BAE24FEEA5175712 /* CDVVibration.m */; };
+		DC3F11368CCB457A8A69660A /* PhoneDialer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6940AEEDF6CC427BB8786E60 /* PhoneDialer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,8 @@
 		D9C4ECD981A541EDBCDEDCFC /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		003E8233BAE24FEEA5175712 /* CDVVibration.m */ = {isa = PBXFileReference; name = "CDVVibration.m"; path = "cordova-plugin-vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		E32B70F181D646029CA315CC /* CDVVibration.h */ = {isa = PBXFileReference; name = "CDVVibration.h"; path = "cordova-plugin-vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6940AEEDF6CC427BB8786E60 /* PhoneDialer.m */ = {isa = PBXFileReference; name = "PhoneDialer.m"; path = "com.phonegap.core.phonedialer/PhoneDialer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		AD7045A929B24ED2899E2FB3 /* PhoneDialer.h */ = {isa = PBXFileReference; name = "PhoneDialer.h"; path = "com.phonegap.core.phonedialer/PhoneDialer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +336,8 @@
 				D9C4ECD981A541EDBCDEDCFC /* CDVStatusBar.h */,
 				003E8233BAE24FEEA5175712 /* CDVVibration.m */,
 				E32B70F181D646029CA315CC /* CDVVibration.h */,
+				6940AEEDF6CC427BB8786E60 /* PhoneDialer.m */,
+				AD7045A929B24ED2899E2FB3 /* PhoneDialer.h */,
 			);
 			name = Plugins;
 			path = "SalesTracker/Plugins";
@@ -473,6 +478,7 @@
 				12F9A5E17A924A029ACF7D2F /* CDVViewController+SplashScreen.m in Sources */,
 				EC83A9BA34CE4716984A268B /* CDVStatusBar.m in Sources */,
 				7A1689C2255D42BF924BFDC9 /* CDVVibration.m in Sources */,
+				DC3F11368CCB457A8A69660A /* PhoneDialer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

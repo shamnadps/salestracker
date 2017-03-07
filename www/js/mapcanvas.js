@@ -32,8 +32,8 @@ app.initialize();
 
 function initMap() {
   var icon = {
-      url: "img/car2.jpg", // url
-      scaledSize: new google.maps.Size(15, 30), // scaled size
+      url: "img/blackcar.png", // url
+      scaledSize: new google.maps.Size(25, 30), // scaled size
       origin: new google.maps.Point(0,0), // origin
       anchor: new google.maps.Point(0, 0) // anchor
   };
@@ -53,7 +53,7 @@ function initMap() {
 
 
         marker = new google.maps.Marker({
-          position: new google.maps.LatLng(51.5429, -0.5313),
+          position: new google.maps.LatLng(51.5429, -0.6000),
           icon: icon,
           map: map
         });

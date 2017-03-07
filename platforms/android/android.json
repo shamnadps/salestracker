@@ -6,6 +6,23 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {},
-    "dependent_plugins": {}
+    "installed_plugins": {
+        "com.phonegap.core.phonedialer": {
+            "PACKAGE_NAME": "com.phonegap.sap"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "com.phonegap.core.phonedialer.phonedialer",
+            "file": "plugins/com.phonegap.core.phonedialer/www/dialer.js",
+            "pluginId": "com.phonegap.core.phonedialer",
+            "merges": [
+                "phonedialer"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "com.phonegap.core.phonedialer": "0.2.0"
+    }
 }
