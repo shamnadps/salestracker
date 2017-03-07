@@ -85,17 +85,17 @@ h1 {
 }
 
 .button {
-  	height: 40px !important;
-    width: 100px;
+  	height: 7% !important;
+    width: 30%;
     font-size: 14px;
     float:right;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom:5px;
 }
 .recenterbutton {
-  height: 40px !important;
-  width: 150px;
+  height: 7% !important;
+  width: 40%;
   font-size: 14px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom:5px;
 }

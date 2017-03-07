@@ -559,14 +559,6 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
-    },
-    {
-        "id": "com.phonegap.core.phonedialer.phonedialer",
-        "file": "plugins/com.phonegap.core.phonedialer/www/dialer.js",
-        "pluginId": "com.phonegap.core.phonedialer",
-        "merges": [
-            "phonedialer"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -592,8 +584,7 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.3",
-    "cordova-plugin-whitelist": "1.2.2",
-    "com.phonegap.core.phonedialer": "0.2.0"
+    "cordova-plugin-whitelist": "1.2.2"
 };
 // BOTTOM OF METADATA
 });

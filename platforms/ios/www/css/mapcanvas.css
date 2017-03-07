@@ -38,10 +38,11 @@ body {
   display: block;
   margin: 0 auto;
   text-align:center;
+  margin-top:10px;
 }
 .group .button{
-	height: 40px !important;
-  width: 100px;
+	height: 7% !important;
+  width: 25%;
   font-size: 14px;
   margin-top: 10px;
   margin-bottom:5px;
@@ -49,8 +50,8 @@ body {
 }
 
 .group .calldriver {
-  height: 40px !important;
-  width: 100px;
+  height: 7% !important;
+  width: 30%;
   font-size: 14px;
   margin-top: 10px;
   margin-bottom:5px;
@@ -58,8 +59,8 @@ body {
 }
 
 .group .changeroute {
-  height: 40px !important;
-  width: 140px;
+  height: 7% !important;
+  width: 40%;
   font-size: 14px;
   margin-top: 10px;
   margin-bottom:5px;

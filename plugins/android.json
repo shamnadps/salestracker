@@ -6,10 +6,6 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {
-        "com.phonegap.core.phonedialer": {
-            "PACKAGE_NAME": "com.phonegap.sap"
-        }
-    },
+    "installed_plugins": {},
     "dependent_plugins": {}
 }

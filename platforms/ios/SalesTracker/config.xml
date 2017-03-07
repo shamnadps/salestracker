@@ -75,9 +75,6 @@
     <feature name="Vibration">
         <param name="ios-package" value="CDVVibration" />
     </feature>
-    <feature name="PhoneDialer">
-        <param name="ios-package" value="PhoneDialer" />
-    </feature>
     <name>SalesTracker</name>
     <description>
         Hello World sample application that responds to the deviceready event.

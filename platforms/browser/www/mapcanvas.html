@@ -13,14 +13,34 @@
           window.open("mapview.html");
         }
         function calldriver() {
-          alert("calldriver implement 2");
-          document.location.href = 'tel:+1-800-555-1234';
-
-          alert("Ok");
+          try {
+                navigator.notification.confirm(
+                  'Do you want to call the driver ',  // message
+                  onConfirm,              // callback to invoke with index of button pressed
+                  'CallRequest',            // title
+                  ['yes','no']             // buttonLabels
+                );
+          }
+          catch(err) {
+            alert(err);
+          }
+          //window.open("index.html");
+        }
+        function onConfirm(buttonIndex){
+          if (buttonIndex == 1){
+            window.open('tel:1234567890', '_system');
+          }
         }
         function changeroute() {
           alert("changeroute");
         }
+        function onSuccess(result){
+  alert("Success:"+result);
+}
+
+function onError(result) {
+  alert("Error:"+result);
+}
         </script>
     </head>
     <body>
@@ -28,7 +48,6 @@
         <input  class= "calldriver" id="calldriver" type="submit" onclick="calldriver()" value="Call Driver">
         <input  class= "changeroute" id="changeroute" type="submit" onclick="changeroute()" value="Change Route">
         <input  class= "button" id="buttonStyle" type="submit" onclick="goback()" value="Back">
-<a href="tel:+1-800-555-1234">call this number</a>
       </div>
         <div id="map-canvas"></div>
         <script type="text/javascript" src="js/mapcanvas.js"></script>

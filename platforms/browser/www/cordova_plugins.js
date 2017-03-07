@@ -604,11 +604,19 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.phonegap.core.phonedialer/www/dialer.js",
-        "id": "com.phonegap.core.phonedialer.phonedialer",
-        "pluginId": "com.phonegap.core.phonedialer",
+        "file": "plugins/com.teamnemitoff.phonedialer/www/dialer.js",
+        "id": "com.teamnemitoff.phonedialer.phonedialer",
+        "pluginId": "com.teamnemitoff.phonedialer",
         "merges": [
             "phonedialer"
+        ]
+    },
+    {
+        "file": "plugins/call-number/www/CallNumber.js",
+        "id": "call-number.CallNumber",
+        "pluginId": "call-number",
+        "clobbers": [
+            "call"
         ]
     }
 ];
@@ -636,7 +644,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.3",
     "cordova-plugin-whitelist": "1.2.2",
-    "com.phonegap.core.phonedialer": "0.2.0"
+    "com.teamnemitoff.phonedialer": "0.3.0",
+    "call-number": "0.0.2"
 }
 // BOTTOM OF METADATA
 });
