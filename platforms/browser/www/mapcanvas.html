@@ -14,14 +14,7 @@
         }
         function calldriver() {
           alert("calldriver implement 2");
-          phonedialer.dial(
-  "2125551212",
-  function(err) {
-    if (err == "empty") alert("Unknown phone number");
-    else alert("Dialer Error:" + err);
-  },
-  function(success) { alert('Dialing succeeded'); }
- );
+          document.location.href = 'tel:+1-800-555-1234';
 
           alert("Ok");
         }
@@ -35,6 +28,7 @@
         <input  class= "calldriver" id="calldriver" type="submit" onclick="calldriver()" value="Call Driver">
         <input  class= "changeroute" id="changeroute" type="submit" onclick="changeroute()" value="Change Route">
         <input  class= "button" id="buttonStyle" type="submit" onclick="goback()" value="Back">
+<a href="tel:+1-800-555-1234">call this number</a>
       </div>
         <div id="map-canvas"></div>
         <script type="text/javascript" src="js/mapcanvas.js"></script>
