@@ -17,8 +17,8 @@
                 navigator.notification.confirm(
                   'Do you want to call the driver ',  // message
                   onConfirm,              // callback to invoke with index of button pressed
-                  'CallRequest',            // title
-                  ['yes','no']             // buttonLabels
+                  'Call Request',            // title
+                  ['YES','NO']             // buttonLabels
                 );
           }
           catch(err) {
@@ -32,22 +32,25 @@
           }
         }
         function changeroute() {
-          alert("changeroute");
+          window.open("changeroute.html");
         }
-        function onSuccess(result){
-  alert("Success:"+result);
-}
-
-function onError(result) {
-  alert("Error:"+result);
-}
         </script>
     </head>
     <body>
-      <div class="group" style="padding:5px;text-align:center;">
-        <input  class= "calldriver" id="calldriver" type="submit" onclick="calldriver()" value="Call Driver">
-        <input  class= "changeroute" id="changeroute" type="submit" onclick="changeroute()" value="Change Route">
-        <input  class= "button" id="buttonStyle" type="submit" onclick="goback()" value="Back">
+      <div class="login-wrap">
+        <div class="login-html">
+          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
+          <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+          <div class="login-form">
+            <div class="sign-in-htm">
+              <div class="group">
+                <input  class= "button" id="calldriver" type="submit" onclick="calldriver()" value="Call Driver">
+                <input  class= "button" id="changeroute" type="submit" onclick="changeroute()" value="Change Route">
+                <input  class= "button" id="buttonStyle" type="submit" onclick="goback()" value="Back">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
         <div id="map-canvas"></div>
         <script type="text/javascript" src="js/mapcanvas.js"></script>

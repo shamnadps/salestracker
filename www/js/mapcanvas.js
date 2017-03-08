@@ -37,8 +37,8 @@ function initMap() {
       origin: new google.maps.Point(0,0), // origin
       anchor: new google.maps.Point(0, 0) // anchor
   };
-    var pointA = new google.maps.LatLng(51.7519, -1.2578),
-        pointB = new google.maps.LatLng(50.8429, -0.1313),
+    var pointA = new google.maps.LatLng(21.478503, 40.566196),
+        pointB = new google.maps.LatLng(20.037963, 41.491884),
         myOptions = {
             zoom: 7,
             center: pointA
@@ -53,7 +53,7 @@ function initMap() {
 
 
         marker = new google.maps.Marker({
-          position: new google.maps.LatLng(51.5429, -0.6000),
+          position: new google.maps.LatLng(21.078503, 40.966196),
           icon: icon,
           map: map
         });

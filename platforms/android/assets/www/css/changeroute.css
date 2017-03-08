@@ -37,6 +37,7 @@ a{color:inherit;text-decoration:none}
 	max-width:525px;
 	min-height:670px;
 	position:relative;
+	background:url("img/bg.jpg") no-repeat center;
 }
 .login-html{
 	width:100%;
@@ -78,7 +79,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
-	color:black;
+
 	border-color:#1161ee;
 }
 .login-form{
@@ -149,7 +150,7 @@ a{color:inherit;text-decoration:none}
 	        transform:scale(0) rotate(0);
 }
 .login-form .group .check:checked + label{
-	color:black;
+	color:#fff;
 }
 .login-form .group .check:checked + label .icon{
 	background:#1161ee;
@@ -178,4 +179,11 @@ a{color:inherit;text-decoration:none}
 }
 .foot-lnk{
 	text-align:center;
+}
+.group .backbutton{
+	height: 7% !important;
+  width: 25%;
+  font-size: 100%;
+  float:right;
+  position:relative;
 }
