@@ -16,11 +16,9 @@
     </head>
     <body>
       <div class="login-wrap">
-
       	<div class="login-html">
           <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
           <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
-
       		<div class="login-form">
       			<div class="sign-in-htm">
               <div class="group">
@@ -31,7 +29,16 @@
       		</div>
       	</div>
       </div>
-        <div id="map" style="position:relative;margin-top:1%"></div>
+        <div id="map" style="text-align:center;position:relative;margin-top:1%">
+<center>
+          <div style="width:50%;" >
+          Loading Map..<br><br>
+
+          Please make sure location services are enabled.<br>
+          For loading map you need to have a working internet connection.<br>
+        </div>
+        <center>
+        </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/mapjs.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpNKv1npne5yPpcMdWtn359ogx-ocQB9Y"> </script>
