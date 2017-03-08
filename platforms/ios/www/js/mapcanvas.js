@@ -53,7 +53,7 @@ function initMap() {
 
 
         marker = new google.maps.Marker({
-          position: new google.maps.LatLng(21.078503, 40.966196),
+          position: pointA,
           icon: icon,
           map: map
         });
@@ -72,13 +72,38 @@ function initMap() {
         });
 
     // get route from A to B
-    calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+    calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB,marker,map);
+
 
 }
 
+var i = 0;                //  set your counter to 1
+function moveMarker (map, marker, myRoute) {
+   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+      marker.setPosition( myRoute.overview_path[i]);            //  your code here
+      i++;                     //  increment the counter
+      if (i < myRoute.overview_path.length) {            //  if the counter < 10, call the loop function
+         moveMarker(map, marker,myRoute);             //  ..  again which will trigger another
+      } else {
+        moveMarkerBack(map, marker,myRoute);
+      }                        //  ..  setTimeout()
+   }, 500)
+}
 
+function moveMarkerBack (map, marker, myRoute) {
+   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+      marker.setPosition( myRoute.overview_path[i]);            //  your code here
+      i--;                     //  increment the counter
+      if (i > 0) {            //  if the counter < 10, call the loop function
+         moveMarkerBack(map, marker,myRoute);             //  ..  again which will trigger another
+      } else {
+        moveMarker(map, marker,myRoute);
+      }                        //  ..  setTimeout()
+   }, 500)
+}
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+var myRoute;
+function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB,marker,map) {
 
     directionsService.route({
         origin: pointA,
@@ -88,6 +113,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
         travelMode: google.maps.TravelMode.DRIVING
     }, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
+            myRoute = response.routes[0];
+            marker.setMap( map );
+            moveMarker( map, marker , myRoute);
             directionsDisplay.setDirections(response);
         } else {
             window.alert('Directions request failed due to ' + status);
