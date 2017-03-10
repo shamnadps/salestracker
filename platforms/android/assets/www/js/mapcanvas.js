@@ -16,13 +16,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
        // app.receivedEvent('deviceready');
-       var devicetype = device.platform;
-       if (devicetype == 'Android') {
-         document.getElementById("body").style.fontSize = "large";
-         document.getElementById("calldriver").style.fontSize = "large";
-         document.getElementById("changeroute").style.fontSize = "large";
-         document.getElementById("buttonStyle").style.fontSize = "large";
-       }
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
@@ -131,3 +124,13 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
 }
 
 initMap();
+
+function setFontSizeToLarge() {
+  var devicetype = device.platform;
+  if (devicetype == 'Android') {
+    document.getElementById("body").style.fontSize = "large";
+    document.getElementById("calldriver").style.fontSize = "large";
+    document.getElementById("changeroute").style.fontSize = "large";
+    document.getElementById("buttonStyle").style.fontSize = "large";
+  }
+}
