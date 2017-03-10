@@ -2,6 +2,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        setFontSizeToLarge();
     },
     // Bind Event Listeners
     //
@@ -16,7 +17,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
        // app.receivedEvent('deviceready');
-
+setFontSizeToLarge();
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
@@ -32,7 +33,7 @@ var app = {
 app.initialize();
 
 function initMap() {
-  setFontSizeToLarge();
+
   var devicetype = device.platform;
   var icon = {
       url: "img/blackcar.png", // url
@@ -136,6 +137,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
 
 function setFontSizeToLarge() {
   var devicetype = device.platform;
+  alert(devicetype);
   if (devicetype == 'Android') {
     document.getElementById("body").style.fontSize = "large";
     document.getElementById("changeroute").style.fontSize = "large";
