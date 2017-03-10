@@ -32,6 +32,7 @@ var app = {
 app.initialize();
 
 function initMap() {
+  setFontSizeToLarge();
   var devicetype = device.platform;
   var icon = {
       url: "img/blackcar.png", // url
