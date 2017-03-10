@@ -42,7 +42,7 @@ function initMap() {
 if (devicetype == 'Android') {
   icon = {
       url: "img/blackcar.png", // url
-      scaledSize: new google.maps.Size(25, 30), // scaled size
+      scaledSize: new google.maps.Size(50, 60), // scaled size
       origin: new google.maps.Point(0,0), // origin
       anchor: new google.maps.Point(0, 0) // anchor
   };
