@@ -110,6 +110,7 @@ body {
 }
 .login-form .group .button{
 	height:50px;
+  font-size:small;
 }
 .login-form .group label .icon{
 	width:15px;

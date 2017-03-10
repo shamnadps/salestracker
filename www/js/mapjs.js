@@ -35,7 +35,11 @@ var app = {
 
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+        alert("DeviceType");
+        alert(device);
+        alert(device.platform);
         var devicetype = device.platform;
+        alert(devicetype);
         var icon = {
             url: "img/blackcar.png", // url
             scaledSize: new google.maps.Size(25, 30), // scaled size
