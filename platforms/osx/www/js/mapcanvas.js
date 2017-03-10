@@ -2,6 +2,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        setFontSizeToLarge();
     },
     // Bind Event Listeners
     //
@@ -16,6 +17,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
        // app.receivedEvent('deviceready');
+       setFontSizeToLarge();
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
@@ -31,12 +33,21 @@ var app = {
 app.initialize();
 
 function initMap() {
+  var devicetype = device.platform;
   var icon = {
       url: "img/blackcar.png", // url
       scaledSize: new google.maps.Size(25, 30), // scaled size
       origin: new google.maps.Point(0,0), // origin
       anchor: new google.maps.Point(0, 0) // anchor
   };
+  if (devicetype == 'Android') {
+    icon = {
+        url: "img/blackcar.png", // url
+        scaledSize: new google.maps.Size(50, 60), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    };
+  }
     var pointA = new google.maps.LatLng(21.478503, 40.566196),
         pointB = new google.maps.LatLng(20.037963, 41.491884),
         myOptions = {
