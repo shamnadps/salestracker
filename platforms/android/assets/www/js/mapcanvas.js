@@ -19,6 +19,9 @@ var app = {
        var devicetype = device.platform;
        if (devicetype == 'Android') {
          document.getElementById("body").style.fontSize = "large";
+         document.getElementById("calldriver").style.fontSize = "large";
+         document.getElementById("changeroute").style.fontSize = "large";
+         document.getElementById("buttonStyle").style.fontSize = "large";
        }
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },

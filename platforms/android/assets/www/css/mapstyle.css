@@ -19,7 +19,7 @@ body {
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:'medium';
+    font-size:12px;
     margin:0px;
     padding:0px;
     text-transform:uppercase;
@@ -66,6 +66,7 @@ body {
 	text-transform:uppercase;
 }
 .login-html .tab{
+	font-size:22px;
 	margin-right:15px;
 	padding-bottom:5px;
 	margin:0 15px 10px 0;
@@ -106,11 +107,11 @@ body {
 }
 .login-form .group .label{
 	color:black;
+	font-size:12px;
   padding:5px;
 }
 .login-form .group .button{
 	height:50px;
-  font-size:small;
 }
 .login-form .group label .icon{
 	width:15px;

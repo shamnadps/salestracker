@@ -4,7 +4,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-
+        setFontSizeToLarge();
     },
     // Bind Event Listeners
     //
@@ -19,10 +19,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
        // app.receivedEvent('deviceready');
-       var devicetype = device.platform;
-       if (devicetype == 'Android') {
-         document.getElementById("body").style.fontSize = "large";
-       }
+       setFontSizeToLarge();
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
@@ -106,4 +103,13 @@ app.initialize();
 function resetMap() {
   app.initialize();
 
+}
+
+function setFontSizeToLarge() {
+  var devicetype = device.platform;
+  if (devicetype == 'Android') {
+    document.getElementById("body").style.fontSize = "large";
+    document.getElementById("resetMap").style.fontSize = "large";
+    document.getElementById("goback").style.fontSize = "large";
+  }
 }
