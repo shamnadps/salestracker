@@ -94,7 +94,6 @@ body {
 .login-form .group .button{
 	width:32%;
 	color:black;
-  font-size:100%;
 }
 .login-form .group .input,
 .login-form .group .button{
@@ -113,8 +112,6 @@ body {
 }
 .login-form .group .button{
 	height:50px;
-  -webkit-border-radius:0;
-  border-radius:0;
 }
 .login-form .group label .icon{
 	width:15px;

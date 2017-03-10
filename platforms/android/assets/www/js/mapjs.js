@@ -97,7 +97,7 @@ var app = {
         alert("the code is " + error.code + ". \n" + "message: " + error.message);
     },
 };
-
+setFontSizeToLarge();
 app.initialize();
 
 function resetMap() {

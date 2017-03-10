@@ -2,7 +2,6 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        setFontSizeToLarge();
     },
     // Bind Event Listeners
     //
@@ -17,7 +16,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
        // app.receivedEvent('deviceready');
-       setFontSizeToLarge();
+
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
@@ -40,14 +39,14 @@ function initMap() {
       origin: new google.maps.Point(0,0), // origin
       anchor: new google.maps.Point(0, 0) // anchor
   };
-  if (devicetype == 'Android') {
-    icon = {
-        url: "img/blackcar.png", // url
-        scaledSize: new google.maps.Size(50, 60), // scaled size
-        origin: new google.maps.Point(0,0), // origin
-        anchor: new google.maps.Point(0, 0) // anchor
-    };
-  }
+if (devicetype == 'Android') {
+  icon = {
+      url: "img/blackcar.png", // url
+      scaledSize: new google.maps.Size(25, 30), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+  };
+}
     var pointA = new google.maps.LatLng(21.478503, 40.566196),
         pointB = new google.maps.LatLng(20.037963, 41.491884),
         myOptions = {
@@ -64,7 +63,7 @@ function initMap() {
 
 
         marker = new google.maps.Marker({
-          position: pointA,
+          position: new google.maps.LatLng(21.078503, 40.966196),
           icon: icon,
           map: map
         });
@@ -96,21 +95,21 @@ function moveMarker (map, marker, myRoute) {
       if (i < myRoute.overview_path.length) {            //  if the counter < 10, call the loop function
          moveMarker(map, marker,myRoute);             //  ..  again which will trigger another
       } else {
-        moveMarkerBack(map, marker,myRoute);
+
       }                        //  ..  setTimeout()
-   }, 500)
+   }, 1000)
 }
 
 function moveMarkerBack (map, marker, myRoute) {
    setTimeout(function () {    //  call a 3s setTimeout when the loop is called
       marker.setPosition( myRoute.overview_path[i]);            //  your code here
       i--;                     //  increment the counter
-      if (i > 0) {            //  if the counter < 10, call the loop function
-         moveMarkerBack(map, marker,myRoute);             //  ..  again which will trigger another
+      if (i ) {            //  if the counter < 10, call the loop function
+         moveMarker(map, marker,myRoute);             //  ..  again which will trigger another
       } else {
-        moveMarker(map, marker,myRoute);
+
       }                        //  ..  setTimeout()
-   }, 500)
+   }, 1000)
 }
 
 var myRoute;
@@ -134,14 +133,12 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
     });
 }
 
-initMap();
-
 function setFontSizeToLarge() {
   var devicetype = device.platform;
   if (devicetype == 'Android') {
     document.getElementById("body").style.fontSize = "large";
-    document.getElementById("calldriver").style.fontSize = "large";
     document.getElementById("changeroute").style.fontSize = "large";
+    document.getElementById("calldriver").style.fontSize = "large";
     document.getElementById("buttonStyle").style.fontSize = "large";
   }
 }
