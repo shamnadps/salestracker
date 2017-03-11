@@ -55,11 +55,11 @@ var app = {
 
 
   var locations = [
-      ['Driver No: ST01<br>Location:Taif<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 21.478503, 40.566196, 4, 'ST_01'],
-      ['Driver No: ST02<br>Location:Al Wazeeriah, Jeddah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 21.444598, 39.248555, 5, 'ST_02'],
-      ['Driver No: ST03<br>Location:Al Hijra, Makkah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 21.384098, 39.834531, 3, 'ST_03'],
-      ['Driver No: ST04<br>Location:Makkah Al Mukarramah Rd<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 23.769336, 44.777977, 2, 'ST_04'],
-      ['Driver No: ST05<br>Location:King Fahad Rd, Al Bahah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a>', 20.037963, 41.491884, 1, 'ST_05']
+      ['<div style="font-size:'+getFontSize()+'">Driver No: ST01<br>Location:Taif<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.478503, 40.566196, 4, 'ST_01'],
+      ['<div style="font-size:'+getFontSize()+'">Driver No: ST02<br>Location:Al Wazeeriah, Jeddah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.444598, 39.248555, 5, 'ST_02'],
+      ['<div style="font-size:'+getFontSize()+'">Driver No: ST03<br>Location:Al Hijra, Makkah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.384098, 39.834531, 3, 'ST_03'],
+      ['<div style="font-size:'+getFontSize()+'">Driver No: ST04<br>Location:Makkah Al Mukarramah Rd<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 23.769336, 44.777977, 2, 'ST_04'],
+      ['<div style="font-size:'+getFontSize()+'">Driver No: ST05<br>Location:King Fahad Rd, Al Bahah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 20.037963, 41.491884, 1, 'ST_05']
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -104,6 +104,14 @@ function resetMap() {
 
 }
 
+function getFontSize() {
+  var devicetype = device.platform;
+  if (devicetype == 'iOS') {
+    return 'medium';
+  } else {
+    return 'large';
+  }
+}
 function setFontSizeToLarge() {
   var devicetype = device.platform;
   if (devicetype == 'Android') {
