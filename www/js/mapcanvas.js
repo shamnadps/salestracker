@@ -142,8 +142,12 @@ function setFontSizeToLarge() {
   alert(devicetype);
   if (devicetype == 'Android') {
     document.getElementById("body").style.fontSize = "large";
+    alert("SetBody");
     document.getElementById("changeroute").style.fontSize = "large";
+    alert("changeroute");
     document.getElementById("calldriver").style.fontSize = "large";
+    alert("calldriver");
     document.getElementById("buttonStyle").style.fontSize = "large";
+    alert("buttonStyle");
   }
 }
