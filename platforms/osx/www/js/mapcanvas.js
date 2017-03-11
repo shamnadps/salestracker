@@ -146,7 +146,7 @@ function setFontSizeToLarge() {
 
     document.getElementById("buttonStyle").style.fontSize = "large";
 
-    document.getElementById("bottom").style.fontSize = "large";
+    document.getElementById("bottom").style.fontSize = "x-large";
 
   }
 }

@@ -141,6 +141,6 @@ function setFontSizeToLarge() {
     document.getElementById("body").style.fontSize = "large";
     document.getElementById("resetMap").style.fontSize = "large";
     document.getElementById("goback").style.fontSize = "large";
-    document.getElementById("bottom").style.fontSize = "large";
+    document.getElementById("bottom").style.fontSize = "x-large";
   }
 }
