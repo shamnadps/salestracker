@@ -2,7 +2,6 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        setFontSizeToLarge();
     },
     // Bind Event Listeners
     //
@@ -17,7 +16,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
        // app.receivedEvent('deviceready');
-setFontSizeToLarge();
+       alert("On Ready Calling setFont");
+       setFontSizeToLarge();
+       alert("Set Font Completed");
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
@@ -136,6 +137,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
 }
 
 function setFontSizeToLarge() {
+  alert("Inside");
   var devicetype = device.platform;
   alert(devicetype);
   if (devicetype == 'Android') {
