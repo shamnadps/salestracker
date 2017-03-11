@@ -39,7 +39,7 @@ var app = {
         var devicetype = device.platform;
         var icon = {
             url: "img/blackcar.png", // url
-            scaledSize: new google.maps.Size(25, 30), // scaled size
+            scaledSize: new google.maps.Size(30, 35), // scaled size
             origin: new google.maps.Point(0,0), // origin
             anchor: new google.maps.Point(0, 0) // anchor
         };
@@ -48,18 +48,19 @@ var app = {
               url: "img/blackcar.png", // url
               scaledSize: new google.maps.Size(50, 60), // scaled size
               origin: new google.maps.Point(0,0), // origin
-              anchor: new google.maps.Point(0, 0) // anchor
+              anchor: new google.maps.Point(0, 60),
+              labelOrigin: new google.maps.Point(10, 58)
           };
         }
 
 
 
   var locations = [
-      ['<div style="font-size:'+getFontSize()+'">Driver No: ST01<br>Location:Taif<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.478503, 40.566196, 4, 'ST_01'],
-      ['<div style="font-size:'+getFontSize()+'">Driver No: ST02<br>Location:Al Wazeeriah, Jeddah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.444598, 39.248555, 5, 'ST_02'],
-      ['<div style="font-size:'+getFontSize()+'">Driver No: ST03<br>Location:Al Hijra, Makkah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.384098, 39.834531, 3, 'ST_03'],
-      ['<div style="font-size:'+getFontSize()+'">Driver No: ST04<br>Location:Makkah Al Mukarramah Rd<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 23.769336, 44.777977, 2, 'ST_04'],
-      ['<div style="font-size:'+getFontSize()+'">Driver No: ST05<br>Location:King Fahad Rd, Al Bahah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 20.037963, 41.491884, 1, 'ST_05']
+      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST01<br>Location:Taif<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.478503, 40.566196, '1', 'ST_01'],
+      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST02<br>Location:Al Wazeeriah, Jeddah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.444598, 39.248555, '2', 'ST_02'],
+      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST03<br>Location:Medina<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 25.084098, 39.234531, '3', 'ST_03'],
+      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST04<br>Location:Makkah Al Mukarramah Rd<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 23.769336, 44.777977, '4', 'ST_04'],
+      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST05<br>Location:King Fahad Rd, Al Bahah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 20.037963, 41.491884, '5', 'ST_05']
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -68,6 +69,7 @@ var app = {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
+
     var infowindow = new google.maps.InfoWindow();
 
     var marker, i;
@@ -75,19 +77,35 @@ var app = {
     for (i = 0; i < locations.length; i++) {
       var position = new google.maps.LatLng(locations[i][1], locations[i][2]);
       var lable = locations[i][4];
+      var text = locations[i][3];
       bounds.extend(position);
       marker = new google.maps.Marker({
         position: position,
         icon: icon,
-        map: map
+        map: map,
+        label: {
+        text: text,
+        fontWeight: 'bold',
+        fontSize: '12px',
+        fontFamily: '"Courier New", Courier,Monospace',
+        color: 'white'
+      }
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
           infowindow.open(map, marker);
+          toggleBounce(marker);
+          google.maps.event.addListener(infowindow,'closeclick',function(){
+            marker.setAnimation(null);//removes the marker
+            // then, remove the infowindows name from the array
+          });
         }
       })(marker, i));
+
+
+
     }
 
     map.fitBounds(bounds);
@@ -99,6 +117,11 @@ var app = {
 };
 app.initialize();
 
+function toggleBounce(marker) {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
 function resetMap() {
   app.initialize();
 
@@ -107,9 +130,9 @@ function resetMap() {
 function getFontSize() {
   var devicetype = device.platform;
   if (devicetype == 'iOS') {
-    return 'medium';
+    return 'small';
   } else {
-    return 'large';
+    return 'x-large';
   }
 }
 function setFontSizeToLarge() {

@@ -48,10 +48,11 @@ if (devicetype == 'Android') {
       anchor: new google.maps.Point(0, 0) // anchor
   };
 }
+
     var pointA = new google.maps.LatLng(21.478503, 40.566196),
         pointB = new google.maps.LatLng(20.037963, 41.491884),
         myOptions = {
-            zoom: 7,
+            zoom: 10,
             center: pointA
         },
         map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
@@ -72,13 +73,11 @@ if (devicetype == 'Android') {
         markerA = new google.maps.Marker({
             position: pointA,
             title: "point A",
-            label: "A",
             map: map
         }),
         markerB = new google.maps.Marker({
             position: pointB,
             title: "point B",
-            label: "B",
             map: map
         });
 
