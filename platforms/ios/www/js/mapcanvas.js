@@ -16,9 +16,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
        // app.receivedEvent('deviceready');
-       alert("On Ready Calling setFont");
        setFontSizeToLarge();
-       alert("Set Font Completed");
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
@@ -137,17 +135,17 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
 }
 
 function setFontSizeToLarge() {
-  alert("Inside");
+
   var devicetype = device.platform;
-  alert(devicetype);
+
   if (devicetype == 'Android') {
     document.getElementById("body").style.fontSize = "large";
-    alert("SetBody");
+
     document.getElementById("changeroute").style.fontSize = "large";
-    alert("changeroute");
+
     document.getElementById("calldriver").style.fontSize = "large";
-    alert("calldriver");
+
     document.getElementById("buttonStyle").style.fontSize = "large";
-    alert("buttonStyle");
+
   }
 }
