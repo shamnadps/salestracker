@@ -142,6 +142,6 @@ function setFontSizeToLarge() {
     document.getElementById("resetMap").style.fontSize = "large";
     document.getElementById("goback").style.fontSize = "large";
     document.getElementById("bottom").style.fontSize = "xx-large";
-    document.getElementById("map").style.width = "85%";
+    document.getElementById("map").style.height = "85%";
   }
 }

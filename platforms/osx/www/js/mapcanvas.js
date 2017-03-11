@@ -147,7 +147,7 @@ function setFontSizeToLarge() {
     document.getElementById("buttonStyle").style.fontSize = "large";
 
     document.getElementById("bottom").style.fontSize = "xx-large";
-    document.getElementById("map-canvas").style.width = "85%";
+    document.getElementById("map-canvas").style.height = "85%";
 
   }
 }
