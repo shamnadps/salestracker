@@ -91,8 +91,7 @@ body {
 .login-form .group .input,
 .login-form .group .button{
 	border:none;
-  padding:15px 20px;
-	border-radius:25px;
+  padding:5px 5px;
 }
 .login-form .group input[data-type="password"]{
 	text-security:circle;
