@@ -14,7 +14,6 @@ body {
     background-size: cover;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     margin:0px;
-    padding:0px;
     text-transform:uppercase;
     width:100%;
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
@@ -61,8 +60,6 @@ body {
 	text-transform:uppercase;
 }
 .login-html .tab{
-	margin-right:15px;
-	margin:0 15px 10px 0;
 	display:inline-block;
 	border-bottom:2px solid transparent;
 }
@@ -80,13 +77,13 @@ body {
 	        transform-style:preserve-3d;
 }
 .login-form .group{
-	margin-bottom:15px;
 }
 .login-form .group .label,
 .login-form .group .input,
 .login-form .group .button{
 	width:45%;
 	color:black;
+  font-size: x-small;
 }
 .login-form .group .input,
 .login-form .group .button{
@@ -133,7 +130,6 @@ body {
 	        transform:scale(0) rotate(0);
 }
 .login-form .group label .icon:after{
-	top:6px;
 	right:0;
 	-webkit-transform:scale(0) rotate(0);
 	        transform:scale(0) rotate(0);
@@ -161,11 +157,7 @@ body {
 	        transform:rotate(0);
 }
 
-.hr{
-	height:2px;
-	margin:60px 0 50px 0;
-	background:black;
-}
+
 .foot-lnk{
 	text-align:center;
 }
