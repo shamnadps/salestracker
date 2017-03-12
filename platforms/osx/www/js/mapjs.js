@@ -56,11 +56,11 @@ var app = {
 
 
   var locations = [
-      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST01<br>Location:Taif<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.478503, 40.566196, '1', 'ST_01'],
-      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST02<br>Location:Al Wazeeriah, Jeddah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.444598, 39.248555, '2', 'ST_02'],
-      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST03<br>Location:Medina<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 25.084098, 39.234531, '3', 'ST_03'],
-      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST04<br>Location:Makkah Al Mukarramah Rd<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 23.769336, 44.777977, '4', 'ST_04'],
-      ['<div style="font-size:'+getFontSize()+';color:black;">Driver No: ST05<br>Location:King Fahad Rd, Al Bahah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 20.037963, 41.491884, '5', 'ST_05']
+      ['<div style="color:black;">Driver No: ST01<br>Location:Taif<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.478503, 40.566196, '1', 'ST_01'],
+      ['<div style="color:black;">Driver No: ST02<br>Location:Al Wazeeriah, Jeddah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 21.444598, 39.248555, '2', 'ST_02'],
+      ['<div style="color:black;">Driver No: ST03<br>Location:Medina<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 25.084098, 39.234531, '3', 'ST_03'],
+      ['<div style="color:black;">Driver No: ST04<br>Location:Makkah Al Mukarramah Rd<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 23.769336, 44.777977, '4', 'ST_04'],
+      ['<div style="color:black;">Driver No: ST05<br>Location:King Fahad Rd, Al Bahah<br>EST Trip completion: N/A<br><a href="mapcanvas.html">View Driver Route</a></div>', 20.037963, 41.491884, '5', 'ST_05']
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
