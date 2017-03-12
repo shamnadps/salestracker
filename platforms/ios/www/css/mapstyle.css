@@ -24,7 +24,8 @@ body {
 	width:100%;
 	margin:auto;
 	max-width:100%;
-	min-height:60px;
+	min-height:70px;
+  padding-bottom: 5px;
 	position:relative;
   text-align: center;
   background:rgba(40,57,101,.8);
@@ -79,7 +80,7 @@ body {
 	        transform-style:preserve-3d;
 }
 .login-form .group{
-	margin-bottom:5px;
+	margin-bottom:15px;
 }
 .login-form .group .label,
 .login-form .group .input,
@@ -90,7 +91,10 @@ body {
 .login-form .group .input,
 .login-form .group .button{
 	border:none;
-  padding:5px 5px;
+  padding:2px 2px;
+  -webkit-appearance: none;
+  background: white;
+  opacity: .7;
 }
 .login-form .group input[data-type="password"]{
 	text-security:circle;
@@ -167,7 +171,7 @@ body {
 }
 
 #map{
-  height: 75%;
+  height: 77%;
   width: 100%;
   background:rgba(40,57,101,.6);
   color:#fff;
