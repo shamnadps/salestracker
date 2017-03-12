@@ -7,11 +7,26 @@
 
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
 
+      <link rel="stylesheet" href="css/menubutton.css">
       <link rel="stylesheet" href="css/changeroute.css">
 
 <script text="javascript/text">
 function update() {
-  alert("Route Updated");
+  alert("Updated");
+}
+function updatedriver() {
+  document.getElementById('login-wrap').style.display = "block";
+  document.getElementById('login-html').style.display = "block";
+  document.getElementById('loginform').style.display = "block";
+  document.getElementById('routedetails').style.display = "none";
+  document.getElementById('driverdetails').style.display = "block";
+}
+function updateroute() {
+  document.getElementById('login-wrap').style.display = "block";
+  document.getElementById('login-html').style.display = "block";
+  document.getElementById('loginform').style.display = "block";
+  document.getElementById('driverdetails').style.display = "none";
+  document.getElementById('routedetails').style.display = "block";
 }
 
 function goback() {
@@ -21,38 +36,97 @@ function goback() {
 </head>
 
 <body>
-<div class="login-wrap">
+<div class="login-wrap_menu">
+    <div class="login-html_test">
+      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
+      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+      <div class="login-form_test">
+        <div class="sign-in-htm_test">
+          <div class="group">
+            <input  class= "button" id="calldriver" type="submit" onclick="updatedriver()" value="Add/Update Driver">
+            <input  class= "button" id="changeroute" type="submit" onclick="updateroute()" value="Add/Update Route">
+            <input  class= "button" id="buttonStyle" type="submit" onclick="goback()" value="Back">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="login-wrap" id="login-wrap">
 
-	<div class="login-html">
-    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Change Route</label>
-    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+	<div class="login-html" id="login-html">
+    <br>
+    <hr>
 
-		<div class="login-form">
-			<div class="sign-in-htm">
+		<div class="login-form" id="loginform">
+			<div class="sign-in-htm" id="driverdetails">
+        <div style="width:100%;text-align:center;color:#aaa">
+          <label for="tab-1" class="tab">Add/Update Driver</label>
+          <hr><br><br>
+        </div>
+
 				<div class="group">
-					<label for="driver" class="label">Driver Name:</label>
+					<label for="driver" class="label">Driver ID:</label>
 					<input id="driver" type="text" class="input">
 				</div>
 				<div class="group">
-					<label for="start" class="label">Start Location:</label>
+					<label for="start" class="label">Driver Name:</label>
 					<input id="start" type="text" class="input">
 				</div>
         <div class="group">
-					<label for="end" class="label">End Location:</label>
-					<input id="end" type="text" class="input">
+					<label for="end" class="label">Address:</label>
+					<textarea id="end" type="text" class="input"></textarea>
 				</div><br>
 				<div class="group">
-					<input type="submit" class="button" onclick="update()" value="Update Route">
+					<input type="submit" class="button" onclick="update()" value="Add/Update Driver">
 				</div>
         <div class="group">
 					<input type="submit" class="button" onclick="goback()" value="Back">
 				</div>
 				<div class="hr"></div>
 			</div>
+      <div class="sign-up-htm" id="routedetails" style="display:none;">
+        <div style="width:100%;text-align:center;color:#aaa">
+          <label for="tab-1" class="tab">Add/Update Route</label>
+          <hr><br><br>
+        </div>
+        <div class="group">
+          <label for="driver" class="label">Driver Name:</label>
+          <select class="input" style="height:40px;">
+            <option>ST_01</option>
+            <option>ST_02</option>
+            <option>ST_03</option>
+            <option>ST_04</option>
+          </select>
+        </div>
+        <div class="group">
+          <label for="start" class="label">Start Location:</label>
+          <select class="input" style="height:40px;">
+            <option>ST_01</option>
+            <option>ST_02</option>
+            <option>ST_03</option>
+            <option>ST_04</option>
+          </select>
+        </div>
+        <div class="group">
+          <label for="end" class="label">End Location:</label>
+          <select class="input" style="height:40px;">
+            <option>ST_01</option>
+            <option>ST_02</option>
+            <option>ST_03</option>
+            <option>ST_04</option>
+          </select>
+        </div><br>
+        <div class="group">
+          <input type="submit" class="button" onclick="update()" value="Add/Update Route">
+        </div>
+        <div class="group">
+          <input type="submit" class="button" onclick="goback()" value="Back">
+        </div>
+        <div class="hr"></div>
+      </div>
 		</div>
 	</div>
 </div>
-
 
 </body>
 </html>
