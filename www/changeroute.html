@@ -15,18 +15,22 @@ function update() {
   alert("Updated");
 }
 function updatedriver() {
-  document.getElementById('login-wrap').style.display = "block";
-  document.getElementById('login-html').style.display = "block";
-  document.getElementById('loginform').style.display = "block";
-  document.getElementById('routedetails').style.display = "none";
-  document.getElementById('driverdetails').style.display = "block";
+  // document.getElementById('login-wrap').style.display = "block";
+  // document.getElementById('login-html').style.display = "block";
+  // document.getElementById('loginform').style.display = "block";
+  // document.getElementById('routedetails').style.display = "none";
+  // document.getElementById('driverdetails').style.display = "block";
+  $('#routedetails').slideUp();
+  $('#driverdetails').slideDown();
 }
 function updateroute() {
-  document.getElementById('login-wrap').style.display = "block";
-  document.getElementById('login-html').style.display = "block";
-  document.getElementById('loginform').style.display = "block";
-  document.getElementById('driverdetails').style.display = "none";
-  document.getElementById('routedetails').style.display = "block";
+  // document.getElementById('login-wrap').style.display = "block";
+  // document.getElementById('login-html').style.display = "block";
+  // document.getElementById('loginform').style.display = "block";
+  // document.getElementById('driverdetails').style.display = "none";
+  // document.getElementById('routedetails').style.display = "block";
+  $('#routedetails').slideDown();
+  $('#driverdetails').slideUp();
 }
 
 function goback() {
@@ -59,7 +63,7 @@ function goback() {
 
 		<div class="login-form" id="loginform">
 			<div class="sign-in-htm" id="driverdetails">
-        <div style="width:100%;text-align:center;color:#aaa;font-size:medium">
+        <div style="width:100%;text-align:center;color:white;font-size:medium">
           Add/Update Driver
           <hr><br>
         </div>
@@ -82,7 +86,7 @@ function goback() {
 				<div class="hr"></div>
 			</div>
       <div class="sign-up-htm" id="routedetails" style="display:none;">
-        <div style="width:100%;text-align:center;color:#aaa;font-size:medium">
+        <div style="width:100%;text-align:center;color:white;font-size:medium">
           Add/Update Route
           <hr><br>
         </div>
@@ -121,6 +125,7 @@ function goback() {
 		</div>
 	</div>
 </div>
-
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 </body>
 </html>
