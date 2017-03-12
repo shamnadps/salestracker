@@ -24,8 +24,7 @@ body {
 	width:100%;
 	margin:auto;
 	max-width:100%;
-	min-height:75px;
-  padding-bottom: 10px;
+	min-height:60px;
 	position:relative;
   text-align: center;
   background:rgba(40,57,101,.8);
@@ -80,7 +79,7 @@ body {
 	        transform-style:preserve-3d;
 }
 .login-form .group{
-	margin-bottom:15px;
+	margin-bottom:5px;
 }
 .login-form .group .label,
 .login-form .group .input,
