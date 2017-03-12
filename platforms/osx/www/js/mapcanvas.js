@@ -16,7 +16,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
        // app.receivedEvent('deviceready');
-       setFontSizeToLarge();
        navigator.geolocation.getCurrentPosition(app.onSuccess, app.onError);
     },
 
@@ -40,19 +39,19 @@ function initMap() {
       origin: new google.maps.Point(0,0), // origin
       anchor: new google.maps.Point(0, 0) // anchor
   };
-if (devicetype == 'Android') {
-  icon = {
-      url: "img/blackcar.png", // url
-      scaledSize: new google.maps.Size(50, 60), // scaled size
-      origin: new google.maps.Point(0,0), // origin
-      anchor: new google.maps.Point(0, 0) // anchor
-  };
-}
+// if (devicetype == 'Android') {
+//   icon = {
+//       url: "img/blackcar.png", // url
+//       scaledSize: new google.maps.Size(50, 60), // scaled size
+//       origin: new google.maps.Point(0,0), // origin
+//       anchor: new google.maps.Point(0, 0) // anchor
+//   };
+// }
 
     var pointA = new google.maps.LatLng(21.478503, 40.566196),
         pointB = new google.maps.LatLng(20.037963, 41.491884),
         myOptions = {
-            zoom: 10,
+            zoom: 7,
             center: pointA
         },
         map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
@@ -135,19 +134,19 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
 
 function setFontSizeToLarge() {
 
-  var devicetype = device.platform;
-
-  if (devicetype == 'Android') {
-    document.getElementById("body").style.fontSize = "large";
-
-    document.getElementById("changeroute").style.fontSize = "large";
-
-    document.getElementById("calldriver").style.fontSize = "large";
-
-    document.getElementById("buttonStyle").style.fontSize = "large";
-
-    document.getElementById("bottom").style.fontSize = "xx-large";
-    document.getElementById("map-canvas").style.height = "85%";
-
-  }
+  // var devicetype = device.platform;
+  //
+  // if (devicetype == 'Android') {
+  //   document.getElementById("body").style.fontSize = "large";
+  //
+  //   document.getElementById("changeroute").style.fontSize = "large";
+  //
+  //   document.getElementById("calldriver").style.fontSize = "large";
+  //
+  //   document.getElementById("buttonStyle").style.fontSize = "large";
+  //
+  //   document.getElementById("bottom").style.fontSize = "xx-large";
+  //   document.getElementById("map-canvas").style.height = "85%";
+  //
+  // }
 }
