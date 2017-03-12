@@ -43,15 +43,15 @@ var app = {
             origin: new google.maps.Point(0,0), // origin
             anchor: new google.maps.Point(0, 0) // anchor
         };
-        if (devicetype == 'Android') {
-          icon = {
-              url: "img/blackcar.png", // url
-              scaledSize: new google.maps.Size(50, 60), // scaled size
-              origin: new google.maps.Point(0,0), // origin
-              anchor: new google.maps.Point(0, 60),
-              labelOrigin: new google.maps.Point(10, 58)
-          };
-        }
+        // if (devicetype == 'Android') {
+        //   icon = {
+        //       url: "img/blackcar.png", // url
+        //       scaledSize: new google.maps.Size(50, 60), // scaled size
+        //       origin: new google.maps.Point(0,0), // origin
+        //       anchor: new google.maps.Point(0, 60),
+        //       labelOrigin: new google.maps.Point(10, 58)
+        //   };
+        // }
 
 
 
@@ -136,12 +136,12 @@ function getFontSize() {
   }
 }
 function setFontSizeToLarge() {
-  var devicetype = device.platform;
-  if (devicetype == 'Android') {
-    document.getElementById("body").style.fontSize = "large";
-    document.getElementById("resetMap").style.fontSize = "large";
-    document.getElementById("goback").style.fontSize = "large";
-    document.getElementById("bottom").style.fontSize = "xx-large";
-    document.getElementById("map").style.height = "85%";
-  }
+  // var devicetype = device.platform;
+  // if (devicetype == 'Android') {
+  //   document.getElementById("body").style.fontSize = "large";
+  //   document.getElementById("resetMap").style.fontSize = "large";
+  //   document.getElementById("goback").style.fontSize = "large";
+  //   document.getElementById("bottom").style.fontSize = "xx-large";
+  //   document.getElementById("map").style.height = "85%";
+  // }
 }
