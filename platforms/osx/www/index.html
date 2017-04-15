@@ -8,14 +8,115 @@
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
 
       <link rel="stylesheet" href="css/style.css">
-
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 <script text="javascript/text">
 function showmap() {
-  window.open("mapview.html");
+  var registeredphone = $('#registeredphone').val();
+  if (validate(registeredphone)) {
+    if(checkphone(registeredphone)) {
+      $.ajax({
+        type       : "get",
+        url        : "http://192.168.43.45:3000/salestracker/checkphone/",
+        data       : {phone :registeredphone},
+        dataType   : 'json',
+        success    : function(response) {
+            window.open("loginselect.html");
+            $.each(response, function(index, value) {
+              //alert(JSON.parse(value));
+            });
+        },
+        error      : function(response) {
+          alert(response.responseText);
+        }
+    });
+
+    } else {
+      $('#registeredphoneerror').html('Phone number must be 10 digits');
+    }
+  } else {
+    $('#registeredphoneerror').html('Phone number cannot be empty');
+  }
 }
 function showtest() {
-  window.open("mapview.html");
+  $('#usererror').html('');
+  $('#passworderror').html('');
+  $('#phoneerror').html('');
+  $('#confirmpassworderror').html('');
+  var noerrors = true;
+  var username = $('#username').val();
+  var password = $('#password').val();
+  var phonenumber = $('#phone').val();
+  var confirmpassword = $('#confirmpassword').val();
+  if (!validate(username)) {
+    noerrors = false;
+    $('#usererror').html('Username cannot be empty');
+  }
+  if (!validate(password)) {
+    noerrors = false;
+    $('#passworderror').html('Password cannot be empty');
+  }
+  if(!checkphone(phonenumber)) {
+    noerrors = false;
+    $('#phoneerror').html('Phonenumber must have 10 digits');
+  }
+  if (!validate(confirmpassword)) {
+    noerrors = false;
+    $('#confirmpassworderror').html('Confirm password cannot be empty');
+  }
+  if(!checkpassword(password, confirmpassword)) {
+    noerrors = false;
+    $('#confirmpassworderror').html('Password mismatch!');
+  }
+  if(noerrors) {
+      $.ajax({
+        type       : "get",
+        url        : "http://192.168.43.45:3000/salestracker/regist/",
+        data       : {user : username, pass : password, phone :phonenumber},
+        dataType   : 'json',
+        success    : function(response) {
+            alert("success")
+            $.each(response, function(index, value) {
+              //alert(JSON.parse(value));
+            });
+        },
+        error      : function(response) {
+          alert(JSON.parse(response.responseText).error.message);
+        }
+    });
+  }
 }
+
+function validate(variable) {
+  if (variable.trim().length == 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkphone (variable) {
+  if (variable.trim().length == 10) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkpassword(password, confirmpassword) {
+  if(password == confirmpassword) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
+
 </script>
 </head>
 
@@ -27,12 +128,10 @@ function showtest() {
 		<div class="login-form">
 			<div class="sign-in-htm">
 				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<label for="user" class="label">Registered Phone</label>
+					<input id="registeredphone" type="text" maxlength="10" pattern="[0-9]" placeholder="9876543210" onkeypress="return isNumberKey(event)" class="input number">
+          <br>
+          <span id="registeredphoneerror" class="error"></span>
 				</div>
 				<div class="group">
 					<input id="check" type="checkbox" class="check" checked>
@@ -49,15 +148,23 @@ function showtest() {
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<input id="username" type="text" maxlength="15" class="input"><br>
+          <span id="usererror" class="error"></span>
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="password" type="password" maxlength="15" class="input" data-type="password"><br>
+          <span id="passworderror" class="error"></span>
+				</div>
+        <div class="group">
+					<label for="confirmpass" class="label">Confirm Password</label>
+					<input id="confirmpassword" type="password" maxlength="15" class="input" data-type="password"><br>
+          <span id="confirmpassworderror" class="error"></span>
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
+					<label for="pass" class="label">Phone</label>
+					<input id="phone" type="text" maxlength="10" pattern="[0-9]" placeholder="9876543210" onkeypress="return isNumberKey(event)" class="input number"><br>
+          <span id="phoneerror" class="error"></span>
 				</div><br>
 				<div class="group">
 					<input type="submit" class="button" onclick="showtest()" value="Sign Up">
