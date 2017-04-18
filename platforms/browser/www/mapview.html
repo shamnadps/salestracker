@@ -10,7 +10,7 @@
         <title>Working Google Maps</title>
         <script text="javascript/text">
         function goback() {
-          window.open("index.html");
+          window.open("loginselect.html");
         }
         </script>
     </head>
@@ -23,7 +23,7 @@
       			<div class="sign-in-htm">
               <div class="group">
                 <input class="button" id="resetMap" type="submit" onclick="resetMap()" value="Re-center Map">
-                <input class="button" id="goback" type="submit" onclick="goback()" value="logout">
+                <input class="button" id="goback" type="submit" onclick="goback()" value="BACK">
       				</div>
       			</div>
       		</div>
@@ -43,10 +43,15 @@
 
         <div id="bottom">
           Displaying cars on route.<br>
-              Click on cars to view the details.
+          Click on cars to view the details.
         </div>
+
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="js/getallusers.js"></script>
+        <script type="text/javascript" src="js/usermethods.js"></script>
         <script type="text/javascript" src="js/mapjs.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpNKv1npne5yPpcMdWtn359ogx-ocQB9Y"> </script>
+</script>
     </body>
 </html>

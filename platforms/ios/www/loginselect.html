@@ -10,10 +10,13 @@
         <title>Working Google Maps</title>
         <script text="javascript/text">
         function adminlogin() {
-          window.open("mapview.html");
+          window.open("adminview.html");
         }
         function driverlogin() {
           window.open("driverroute.html");
+        }
+        function logout() {
+          window.open("index.html");
         }
 
         </script>
@@ -31,6 +34,9 @@
     				</div>
             <div class="group">
     					<input type="submit" class="button" onclick="driverlogin()" value="DRIVER LOGIN">
+    				</div>
+            <div class="group">
+    					<input type="submit" class="button" onclick="logout()" value="LOGOUT">
     				</div>
     				<div class="hr"></div>
           </div>

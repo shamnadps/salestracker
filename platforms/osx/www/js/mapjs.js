@@ -24,7 +24,6 @@ var app = {
     },
 
     onSuccess: function(position){
-
         var longitude = '39.172777999999994';
         var latitude = '21.543333';
         var latLong = new google.maps.LatLng(latitude, longitude);

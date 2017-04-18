@@ -11,31 +11,51 @@
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 <script text="javascript/text">
 function showmap() {
+  //loggedIn();
+  var noerrors = true;
   var registeredphone = $('#registeredphone').val();
   if (validate(registeredphone)) {
     if(checkphone(registeredphone)) {
+      $('#loading').show();
       $.ajax({
         type       : "get",
-        url        : "http://192.168.43.45:3000/salestracker/checkphone/",
+        url        : "http://shamnadps.pythonanywhere.com/salestracker/checkphone/",
         data       : {phone :registeredphone},
         dataType   : 'json',
         success    : function(response) {
-            window.open("loginselect.html");
-            $.each(response, function(index, value) {
-              //alert(JSON.parse(value));
-            });
+          $('#registeredphoneerror').html('Logging In');
+
         },
         error      : function(response) {
-          alert(response.responseText);
-        }
+          var errormessage = JSON.parse(response.responseText).error.message;
+          if(errormessage == 'Phone number not registered') {
+            $('#registeredphoneerror').html('This Phone number is not registerd!');
+          }
+          noerrors = false;
+        },
+        complete : function(response) {
+          $('#loading').hide();
+          if(noerrors) {
+            window.localStorage.setItem("phonenumber", registeredphone);
+            loggedIn();
+          }
+
+        },
     });
 
     } else {
+      $('#registeredphoneerror').show();
       $('#registeredphoneerror').html('Phone number must be 10 digits');
     }
   } else {
+    $('#registeredphoneerror').show();
     $('#registeredphoneerror').html('Phone number cannot be empty');
   }
+}
+
+function loggedIn() {
+  window.location.href = "loginselect.html";
+  //window.open("loginselect.html");
 }
 function showtest() {
   $('#usererror').html('');
@@ -49,39 +69,48 @@ function showtest() {
   var confirmpassword = $('#confirmpassword').val();
   if (!validate(username)) {
     noerrors = false;
+    $('#usererror').show();
     $('#usererror').html('Username cannot be empty');
   }
   if (!validate(password)) {
     noerrors = false;
+    $('#passworderror').show();
     $('#passworderror').html('Password cannot be empty');
   }
   if(!checkphone(phonenumber)) {
     noerrors = false;
+    $('#phoneerror').show();
     $('#phoneerror').html('Phonenumber must have 10 digits');
   }
   if (!validate(confirmpassword)) {
     noerrors = false;
+    $('#confirmpassworderror').show();
     $('#confirmpassworderror').html('Confirm password cannot be empty');
   }
   if(!checkpassword(password, confirmpassword)) {
     noerrors = false;
+    $('#confirmpassworderror').show();
     $('#confirmpassworderror').html('Password mismatch!');
   }
   if(noerrors) {
+    $('#loading').show();
       $.ajax({
         type       : "get",
-        url        : "http://192.168.43.45:3000/salestracker/regist/",
+        url        : "http://shamnadps.pythonanywhere.com/salestracker/regist/",
         data       : {user : username, pass : password, phone :phonenumber},
         dataType   : 'json',
         success    : function(response) {
-            alert("success")
             $.each(response, function(index, value) {
               //alert(JSON.parse(value));
             });
         },
         error      : function(response) {
           alert(JSON.parse(response.responseText).error.message);
-        }
+        },
+        complete : function(response) {
+          $('#loading').hide();
+          loggedIn();
+        },
     });
   }
 }
@@ -122,6 +151,7 @@ function isNumberKey(evt){
 
 <body>
   <div class="login-wrap">
+
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
 		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
@@ -138,7 +168,8 @@ function isNumberKey(evt){
 					<label for="check"><span class="icon"></span> Keep me Signed in</label>
 				</div><br>
 				<div class="group">
-					<input type="submit" class="button" onclick="showmap()" value="Sign In">
+					<input type="submit" class="button" onclick="showmap()" value="Sign In"><br>
+
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
@@ -176,7 +207,11 @@ function isNumberKey(evt){
 			</div>
 		</div>
 	</div>
+  <div id="loading" style="display:none;width:50%;height:10%;text-align:center;padding:20px;border-radius:10px;background:white;margin:0;position:absolute;text-align:center;left:25%;top:30%;">
+      Connecting to Server. Please wait..
+  </div>
 </div>
+
 
 
 </body>
