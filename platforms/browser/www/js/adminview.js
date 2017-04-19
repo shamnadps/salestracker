@@ -90,7 +90,8 @@ function populatemap() {
       });
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent("SalesTracker");
+          var contentString = '<div style="color:black;">'+userlist[i]+'<br>Location:'+addresslist[i]+'<br>EST Trip completion: N/A<br><a href="driverroute.html">View Driver Route</a></div>';
+          infowindow.setContent(contentString);
           infowindow.open(map, marker);
           toggleBounce(marker);
           google.maps.event.addListener(infowindow,'closeclick',function(){
